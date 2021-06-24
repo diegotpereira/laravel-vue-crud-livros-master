@@ -31,9 +31,10 @@
         methods:{
             addLivro(){
                 this.axios
-                    .post('htpp://localhost:8000/api/livro/add', this.livro)
+                    .post('http://localhost:8000/livros/add', this.livro)
                     .then(response => (
                         this.$router.push({name: 'home'})
+                        // console.log(response.data)
                     ))
                     .catch(error => console.log(error))
                     .finally(() => this.loading = false)

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Http\Request;
@@ -19,9 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('api')->group(function(){
+/*Route::middleware('api')->group(function(){
     Route::resource('produtos', ProdutoController::class);
-});
+});*/
 
 Route::get('livros', 'LivroController@index');
 Route::group(['prefix' => 'livro'], function(){
