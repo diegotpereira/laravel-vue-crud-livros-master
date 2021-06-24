@@ -8,23 +8,6 @@ import EditLivro  from './components/EditLivro.vue';
 
 
 export const routes = [
-   /* {
-        name: 'home',
-        path: '/',
-        component: TodosProdutos
-    },
-
-    {
-        name: 'criar',
-        path: '/criar',
-        component: CriarProduto
-    },
-
-    {
-        name: 'edit',
-        path: '/edit/:id',
-        component: EditarProduto
-    }*/
 
     {
         name: 'home',

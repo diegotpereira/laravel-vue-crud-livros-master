@@ -5,7 +5,7 @@
             <div class="col-md-6">
                 <form @submit.prevent="addLivro">
                     <div class="form-group">
-                        <label>NOme</label>
+                        <label>Nome</label>
                         <input type="text" class="form-control" v-model="livro.nome">
                     </div>
 

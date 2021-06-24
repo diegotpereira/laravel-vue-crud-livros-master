@@ -24,7 +24,7 @@
 
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="name='edit', params: {id:livro.id}}" class="btn btn-primary">Editar</router-link>
+                            <router-link :to="{name:'edit', params: {id:livro.id}}" class="btn btn-primary">Editar</router-link>
                             <button class="btn btn-danger" @click="deletarLivro(livro.id)">Deletar</button>
                         </div>
                     </td>
@@ -53,7 +53,7 @@
         methods: {
             deletarLivro(id){
                 this.axios
-                    .dekete('http://localhost:8000/api/livro/delete/${id}')
+                    .delete('http://localhost:8000/api/livro/delete/${id}')
                     .then(response => {
                         let i = this.livros.map(item.id).indexOf(id);
                         this.livros.splice(i ,1);
