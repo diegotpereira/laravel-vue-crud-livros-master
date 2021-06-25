@@ -41,7 +41,7 @@ class LivroController extends Controller
         //
         $Book = new Book([
             'name'=> $request->input('name'),
-            'autor' => $request->input('author')
+            'author' => $request->input('author')
         ]);
 
         $Book->save();
