@@ -1908,7 +1908,7 @@ __webpack_require__.r(__webpack_exports__);
         return _this.$router.push({
           name: 'home'
         }) // console.log(response.data)
-        
+
         ;
       })["catch"](function (error) {
         return console.log(error);
@@ -1982,7 +1982,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteBook: function deleteBook(id) {
       var _this2 = this;
 
-      this.axios["delete"]("https://laravel.dev/api/book/delete/".concat(id)).then(function (response) {
+      this.axios["delete"]("http://localhost:8000/api/book/delete/".concat(id)).then(function (response) {
         // window.location.reload();
         // this.books.splice(this.books.indexOf(id), 1);
         // console.log(response.data)
@@ -2046,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
     updateBook: function updateBook() {
       var _this2 = this;
 
-      this.axios.post("htpp://localhost:8000/api/book/update/".concat(this.$route.params.id), this.book).then(function (response) {
+      this.axios.post("http://localhost:8000/api/book/update/".concat(this.$route.params.id), this.book).then(function (response) {
         _this2.$router.push({
           name: 'home'
         });
@@ -37388,7 +37388,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { staticClass: "nav-item nav-link", attrs: { to: "/add" } },
-                  [_vm._v("Add Book")]
+                  [_vm._v("Novo Livro")]
                 )
               ],
               1
@@ -37418,13 +37418,13 @@ var staticRenderFns = [
       [
         _c(
           "a",
-          { attrs: { href: "https://www.mynotepaper.com/", target: "_blank" } },
-          [_c("img", { attrs: { src: "https://i.imgur.com/hHZjfUq.png" } })]
+          { attrs: { href: "https://github.com/diegotpereira", target: "_blank" } },
+          [_c("img", { attrs: { src: "https://github.githubassets.com/images/modules/site/icons/footer/github-logo.svg" } })]
         ),
         _c("br"),
         _vm._v(" "),
         _c("span", { staticClass: "text-secondary" }, [
-          _vm._v("Laravel & Vue CRUD Single Page Application (SPA) Tutorial")
+          _vm._v("Laravel & Vue CRUD Single Page Application (SPA) + em github.com/diegotpereira")
         ])
       ]
     )
@@ -37452,7 +37452,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Add Book")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Adicionar Livro")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -37468,7 +37468,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Name")]),
+              _c("label", [_vm._v("Nome")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -37494,7 +37494,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Author")]),
+              _c("label", [_vm._v("Autor")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -37522,7 +37522,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Add Book")]
+              [_vm._v("Salvar")]
             )
           ]
         )
@@ -37553,7 +37553,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("All Books")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Lista de Livros")]),
     _c("br"),
     _vm._v(" "),
     _c("table", { staticClass: "table table-bordered" }, [
@@ -37584,7 +37584,7 @@ var render = function() {
                       staticClass: "btn btn-primary",
                       attrs: { to: { name: "edit", params: { id: book.id } } }
                     },
-                    [_vm._v("Edit\n                    ")]
+                    [_vm._v("Editar\n                    ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -37597,7 +37597,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Delete")]
+                    [_vm._v("Excluir")]
                   )
                 ],
                 1
@@ -37619,15 +37619,15 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
+        _c("th", [_vm._v("Nome")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Author")]),
+        _c("th", [_vm._v("Autor")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Created At")]),
+        _c("th", [_vm._v("Criado em")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Updated At")]),
+        _c("th", [_vm._v("Atualizado em")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Actions")])
+        _c("th", [_vm._v("Ação")])
       ])
     ])
   }
@@ -37654,7 +37654,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h3", { staticClass: "text-center" }, [_vm._v("Edit Book")]),
+    _c("h3", { staticClass: "text-center" }, [_vm._v("Atualizar Livro")]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
@@ -37670,7 +37670,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Name")]),
+              _c("label", [_vm._v("Nome")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -37696,7 +37696,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
-              _c("label", [_vm._v("Author")]),
+              _c("label", [_vm._v("Autor")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -37724,7 +37724,7 @@ var render = function() {
             _c(
               "button",
               { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Update Book")]
+              [_vm._v("Atualizar")]
             )
           ]
         )
