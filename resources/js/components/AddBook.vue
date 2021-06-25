@@ -3,15 +3,15 @@
         <h3 class="text-center">Novo Livro</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="addLivro">
+                <form @submit.prevent="addBook">
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" v-model="livro.nome">
+                        <input type="text" class="form-control" v-model="book.name">
                     </div>
 
                     <div class="form-group">
                         <label>Autor</label>
-                        <input type="text" class="form-control" v-model="livro.autor">
+                        <input type="text" class="form-control" v-model="book.author">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Novo Livro</button>
@@ -25,13 +25,13 @@
     export default{
         data(){
             return{
-                livro:{}
+                book:{}
             }
         },
         methods:{
-            addLivro(){
+            addBook(){
                 this.axios
-                    .post('http://localhost:8000/livros/add', this.livro)
+                    .post('http://localhost:8000/api/book/add', this.book)
                     .then(response => (
                         this.$router.push({name: 'home'})
                         // console.log(response.data)

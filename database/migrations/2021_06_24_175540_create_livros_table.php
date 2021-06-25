@@ -13,10 +13,10 @@ class CreateLivrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('livros', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->string('autor');
+            $table->string('name');
+            $table->string('author');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateLivrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('livros');
+        Schema::dropIfExists('books');
     }
 }

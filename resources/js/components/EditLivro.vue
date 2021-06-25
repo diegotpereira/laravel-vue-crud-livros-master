@@ -6,12 +6,12 @@
                 <form @submit.prevent="updateLivro">
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" v-model="livro.nome">
+                        <input type="text" class="form-control" v-model="book.name">
                     </div>
 
                     <div class="form-group">
                         <label>Autor</label>
-                        <input type="text" class="form-control" v-model="livro.autor">
+                        <input type="text" class="form-control" v-model="book.author">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Atualizar Livro</button>
@@ -25,22 +25,22 @@
     export default{
         data(){
             return {
-                livro:{}
+                book:{}
             }
         },
 
         created(){
             this.axios
-                .get('http://localhost:8000/api/livro/edit/${this.$route.params.id}')
+                .get('http://localhost:8000/api/book/edit/${this.$route.params.id}')
                 .then((response) => {
-                    this.livro = response.data;
+                    this.book = response.data;
                 });
         },
 
         methods:{
-            updateLivro(){
-                this.axios  
-                    .post('htpp://localhost:8000/api/livro/update/${this.$route.params.id}', this.livro)
+            updatebook(){
+                this.axios
+                    .post('htpp://localhost:8000/api/book/update/${this.$route.params.id}', this.book)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });

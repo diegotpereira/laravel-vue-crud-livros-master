@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">Lista de Livros</h3><br/>
+        <h3 class="text-center">Lista de books</h3><br/>
 
         <table class="table table-bordered">
             <thead>
@@ -15,17 +15,17 @@
             </thead>
 
             <tbody>
-                <tr v-for="livro in livros" :key="livro.id">
-                    <td>{{livro.id}}</td>
-                    <td>{{livro.nome}}</td>
-                    <td>{{livro.autor}}</td>
-                    <td>{{livro.created_at}}</td>
-                    <td>{{livro.updated_at}}</td>
+                <tr v-for="book in books" :key="book.id">
+                    <td>{{book.id}}</td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.created_at}}</td>
+                    <td>{{book.updated_at}}</td>
 
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name:'edit', params: {id:livro.id}}" class="btn btn-primary">Editar</router-link>
-                            <button class="btn btn-danger" @click="deletarLivro(livro.id)">Deletar</button>
+                            <router-link :to="{name:'edit', params: {id:book.id}}" class="btn btn-primary">Editar</router-link>
+                            <button class="btn btn-danger" @click="deletarbook(book.id)">Deletar</button>
                         </div>
                     </td>
                 </tr>
@@ -38,25 +38,25 @@
     export default{
         data(){
             return{
-                livros:[]
+                books:[]
             }
         },
 
         created(){
             this.axios
-                .get('http://localhost:8000/api/livros')
+                .get('http://localhost:8000/api/books')
                 .then(response => {
-                    this.livros = response.data;
+                    this.books = response.data;
                 });
         },
 
         methods: {
-            deletarLivro(id){
+            deletarbook(id){
                 this.axios
-                    .delete('http://localhost:8000/api/livro/delete/${id}')
+                    .delete('http://localhost:8000/api/book/delete/${id}')
                     .then(response => {
-                        let i = this.livros.map(item.id).indexOf(id);
-                        this.livros.splice(i ,1);
+                        let i = this.books.map(item.id).indexOf(id);
+                        this.books.splice(i ,1);
                     });
             }
         }

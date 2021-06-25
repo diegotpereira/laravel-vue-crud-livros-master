@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Livro;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class LivroController extends Controller
@@ -15,9 +15,9 @@ class LivroController extends Controller
     public function index()
     {
         //
-        $livros = Livro::all()->toArray();
+        $books = Book::all()->toArray();
 
-        return array_reverse($livros);
+        return array_reverse($books);
     }
 
     /**
@@ -39,12 +39,12 @@ class LivroController extends Controller
     public function add(Request $request)
     {
         //
-        $livro = new Livro([
-            'nome'=> $request->input('nome'),
-            'autor' => $request->input('autor')
+        $Book = new Book([
+            'name'=> $request->input('name'),
+            'autor' => $request->input('author')
         ]);
 
-        $livro->save();
+        $Book->save();
 
         return response()->json('O livro foi adicionado com sucesso!.');
     }
@@ -52,10 +52,10 @@ class LivroController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Livro  $livro
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Livro $livro)
+    public function show(Book $book)
     {
         //
     }
@@ -63,30 +63,30 @@ class LivroController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Livro  $livro
+     * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
 
-        $livro = Livro::find($id);
+        $book = Book::find($id);
 
-        return response()->json($livro);
+        return response()->json($book);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Livro  $livro
+     * @param  \App\Models\Livro  $book
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $livro = Livro::find($id);
-        $livro->update($request->all());
+        $book = Book::find($id);
+        $book->update($request->all());
 
         return response()->json('O livro foi atualizado com sucesso!.');
 
@@ -95,14 +95,14 @@ class LivroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Livro  $livro
+     * @param  \App\Models\Livro  $book
      * @return \Illuminate\Http\Response
      */
     public function delete($id)
     {
         //
-        $livro = Livro::find($id);
-        $livro->delete();
+        $book = Book::find($id);
+        $book->delete();
 
         return response()->json('O livro deletado com sucesso!.');
     }
