@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="text-center" style="margin: 20px 0px 20px 0px;">
-            <a href="https://github.com/diegotpereira" target="_blank"><img src="https://i.imgur.com/hHZjfUq.png"></a><br>
-            <span class="text-secondary">Application (SPA) Laravel & Vue CRUD Single Page</span>
+            <a href="https://github.com/diegotpereira" target="_blank"><img src="https://github.githubassets.com/images/modules/site/icons/footer/github-logo.svg"></a><br>
+            <span class="text-secondary">Laravel & Vue CRUD Single Page Application (SPA) + em github.com/diegotpereira</span>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
