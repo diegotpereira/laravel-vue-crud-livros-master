@@ -1908,6 +1908,7 @@ __webpack_require__.r(__webpack_exports__);
         return _this.$router.push({
           name: 'home'
         }) // console.log(response.data)
+        
         ;
       })["catch"](function (error) {
         return console.log(error);

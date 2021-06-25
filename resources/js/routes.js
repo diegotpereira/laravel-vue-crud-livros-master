@@ -4,7 +4,7 @@ import EditarProduto from './components/EditarProduto.vue';
 
 import AllBooks from './components/AllBooks.vue';
 import AddBook from './components/AddBook.vue';
-import EditLivro  from './components/EditLivro.vue';
+import EditBook  from './components/EditBook.vue';
 
 
 export const routes = [
@@ -24,6 +24,6 @@ export const routes = [
     {
         name: 'edit',
         path: '/edit/:id',
-        component: EditLivro
+        component: EditBook
     }
 ];

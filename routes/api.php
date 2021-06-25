@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     Route::resource('produtos', ProdutoController::class);
 });*/
 
-Route::get('livros', 'LivroController@index');
+Route::get('books', 'LivroController@index');
 Route::group(['prefix' => 'livro'], function(){
     Route::post('add', 'LivroController@add');
     Route::get('edit/{id}', 'LivroController@edit');
