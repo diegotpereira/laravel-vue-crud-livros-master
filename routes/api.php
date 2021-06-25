@@ -24,7 +24,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });*/
 
 Route::get('books', 'LivroController@index');
-Route::group(['prefix' => 'livro'], function(){
+Route::group(['prefix' => 'book'], function(){
     Route::post('add', 'LivroController@add');
     Route::get('edit/{id}', 'LivroController@edit');
     Route::post('update/{id}', 'LivroController@update');
